@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "paths": {
+            "@contants/*": ["app/utils/contants/*"],
+            "@helpers/*": ["app/utils/helpers/*"],
+            "@modules/*": ["app/modules/*"],
+            "@hooks/*": ["app/hooks/*"],
+            "@routes": ["app/routes/index"],
+            "@interfaces": ["app/interfaces/index"],
+            "@store/*": ["store/*"]
+        }
+    }
+}
