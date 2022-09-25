@@ -4,7 +4,7 @@ import {
     ITask,
     IUpdateTask,
     IUpdateTaskAssignees,
-} from '@interfaces';
+} from '../../../app/interfaces';
 import React from 'react';
 import { NavigateFunction } from 'react-router-dom';
 

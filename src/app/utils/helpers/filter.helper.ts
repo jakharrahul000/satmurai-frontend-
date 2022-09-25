@@ -1,4 +1,4 @@
-import { IUser } from '@interfaces';
+import { IUser } from '../../interfaces';
 
 /**
  * filter an array of users by id

@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios';
 import { SetAlertMsg, SetAlertType } from 'store/slices';
 import { AppDispatch } from 'store/store';
-import { IHttpError } from '@interfaces';
+import { IHttpError } from '../../interfaces';
 import { NavigateFunction } from 'react-router-dom';
 import { logout } from './auth.helper';
 import { AlertType } from '../enums/alert.enum';

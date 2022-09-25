@@ -1,4 +1,4 @@
-import { ITask } from '@interfaces';
+import { ITask } from '../../../app/interfaces';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@reduxjs/toolkit';
 
 export interface ITasksListState extends EntityState<ITask> {}

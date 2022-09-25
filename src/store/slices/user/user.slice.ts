@@ -1,4 +1,4 @@
-import { IUser } from '@interfaces';
+import { IUser } from '../../../app/interfaces';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { userInitialState as initialState } from 'store/states';
 

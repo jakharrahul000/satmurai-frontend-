@@ -12,7 +12,7 @@ import {
 } from 'store/slices';
 import { getAxiosInstance } from 'setup';
 import { apiUrl } from 'app/utils/processenv';
-import { IGetUsersResponse, IUser, IUserResponse } from '@interfaces';
+import { IGetUsersResponse, IUser, IUserResponse } from '../../../app/interfaces';
 import { Roles } from 'app/utils/enums/role.enum';
 
 /**

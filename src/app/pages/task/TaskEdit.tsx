@@ -35,14 +35,17 @@ export const TaskEdit = () => {
                     <>
                         <div className="flex items-center justify-between">
                             <div className="font-medium text-base">Tasks Info</div>
-                            <Button
-                                onClick={deleteTask}
-                                color="warn"
-                                large
-                                className="flex justify-center  items-center"
-                            >
-                                Delete
-                            </Button>
+                            {user &&
+                                (user.role === Roles.ADMINISTRATOR || task.owner === user._id) && (
+                                    <Button
+                                        onClick={deleteTask}
+                                        color="warn"
+                                        large
+                                        className="flex justify-center  items-center"
+                                    >
+                                        Delete
+                                    </Button>
+                                )}
                         </div>
                         <hr className="border-gray-400 mt-2 mb-4" />
                         <div className="mt-6 flex flex-col gap-y-5">

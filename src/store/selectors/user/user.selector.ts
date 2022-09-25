@@ -1,4 +1,4 @@
-import { IUser } from '@interfaces';
+import { IUser } from '../../../app/interfaces';
 import { IUserState } from 'store/states';
 import { RootState } from 'store/store';
 

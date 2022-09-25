@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, Update } from '@reduxjs/toolkit';
-import { IUser } from '@interfaces';
+import { IUser } from '../../../app/interfaces';
 import { usersListInitialState as initialState, UsersListAdapter } from 'store/states';
 
 export const usersListSlice = createSlice({

@@ -1,5 +1,5 @@
 import jwt_decode from 'jwt-decode';
-import { IJWTToken } from '@interfaces';
+import { IJWTToken } from '../../interfaces';
 
 /**
  * Decode given jwt token

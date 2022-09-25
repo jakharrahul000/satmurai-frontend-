@@ -1,19 +1,20 @@
-import { getTask, getTaskLoading, getUsersList } from 'store/selectors';
+import { getTask, getTaskLoading, getUser, getUsersList } from 'store/selectors';
 import { useAppDispatch } from 'store/store';
-import { GetTask } from 'store/thunks';
+import { DeleteTask, GetTask } from 'store/thunks';
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { Button } from '../../modules/core';
 import { IUser } from '../../interfaces';
-import { displayTimestamp, filterUsersById } from '../../utils';
+import { displayTimestamp, filterUsersById, Roles } from '../../utils';
 import { HeaderLayout, OneChildLayout } from '../../../app/modules/layouts';
 
 const priorities = ['Low', 'Normal', 'High', 'Urgent'];
 
 export const TaskDetails = () => {
     const { id } = useParams();
+    const user = useSelector(getUser);
     const users = useSelector(getUsersList);
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -21,6 +22,10 @@ export const TaskDetails = () => {
     const taskLoading = useSelector(getTaskLoading);
     const [assignees, setAssignees] = useState<IUser[]>([]);
     const [owner, setOwner] = useState<IUser | null>(null);
+
+    const deleteTask = () => {
+        if (id) dispatch(DeleteTask({ id, navigate }));
+    };
 
     const goToTaskEdit = () => {
         if (id) navigate(`/task/${id}/edit`);
@@ -35,7 +40,7 @@ export const TaskDetails = () => {
     useEffect(() => {
         if (id && task && task._id === id && users.length > 0) {
             const taskAssignees: IUser[] = [];
-            task.assignees.forEach((assignee) => {
+            task.assignees.forEach((assignee: any) => {
                 const filtereduser = filterUsersById(users, assignee);
                 if (filtereduser) taskAssignees.push(filtereduser);
             });
@@ -53,14 +58,28 @@ export const TaskDetails = () => {
                     <>
                         <div className="flex items-center justify-between">
                             <div className="font-medium text-base">Tasks Info</div>
-                            <Button
-                                onClick={goToTaskEdit}
-                                color="primary"
-                                large
-                                className="flex justify-center  items-center"
-                            >
-                                Edit
-                            </Button>
+                            <div className="flex items-center gap-x-3">
+                                {user &&
+                                    (user.role === Roles.ADMINISTRATOR ||
+                                        task.owner === user._id) && (
+                                        <Button
+                                            onClick={deleteTask}
+                                            color="warn"
+                                            large
+                                            className="flex justify-center  items-center"
+                                        >
+                                            Delete
+                                        </Button>
+                                    )}
+                                <Button
+                                    onClick={goToTaskEdit}
+                                    color="primary"
+                                    large
+                                    className="flex justify-center  items-center"
+                                >
+                                    Edit
+                                </Button>
+                            </div>
                         </div>
                         <hr className="border-gray-400 mt-2 mb-4" />
                         <div className="mt-6 flex flex-col gap-y-2">

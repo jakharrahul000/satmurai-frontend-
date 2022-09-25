@@ -1,4 +1,4 @@
-import { IUser } from '@interfaces';
+import { IUser } from '../../../app/interfaces';
 
 export interface IUserState {
     user: IUser | null;

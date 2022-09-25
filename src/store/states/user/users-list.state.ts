@@ -1,4 +1,4 @@
-import { IUser } from '@interfaces';
+import { IUser } from '../../../app/interfaces';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@reduxjs/toolkit';
 
 const sortByName = (a: any, b: any): number => {

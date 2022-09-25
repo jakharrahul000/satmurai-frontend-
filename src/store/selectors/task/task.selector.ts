@@ -1,4 +1,4 @@
-import { ITask } from '@interfaces';
+import { ITask } from '../../../app/interfaces';
 import { ITaskState } from 'store/states';
 import { RootState } from 'store/store';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IButtonProps } from '@interfaces';
+import { IButtonProps } from '../../../interfaces';
 
 export const Button = ({
     background,

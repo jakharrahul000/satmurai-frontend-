@@ -1,5 +1,5 @@
 import React from 'react';
-import { ILogin, IRegister } from '@interfaces';
+import { ILogin, IRegister } from '../../../app/interfaces';
 import { NavigateFunction } from 'react-router-dom';
 
 export interface ILoginThunk {

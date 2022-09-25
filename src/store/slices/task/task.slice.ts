@@ -1,4 +1,4 @@
-import { ITask } from '@interfaces';
+import { ITask } from '../../../app/interfaces';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { taskInitialState as initialState } from 'store/states';
 

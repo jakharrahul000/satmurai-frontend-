@@ -1,4 +1,4 @@
-import { ITask } from '@interfaces';
+import { ITask } from '../../../app/interfaces';
 
 export interface ITaskState {
     task: ITask | null;

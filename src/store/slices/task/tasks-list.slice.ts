@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, Update } from '@reduxjs/toolkit';
-import { ITask } from '@interfaces';
+import { ITask } from '../../../app/interfaces';
 import { tasksListInitialState as initialState, TasksListAdapter } from 'store/states';
 
 export const tasksListSlice = createSlice({

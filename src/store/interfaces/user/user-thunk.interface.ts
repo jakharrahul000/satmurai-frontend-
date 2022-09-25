@@ -1,4 +1,4 @@
-import { IChangeUserRole, IUser } from '@interfaces';
+import { IChangeUserRole, IUser } from '../../../app/interfaces';
 import React from 'react';
 import { NavigateFunction } from 'react-router-dom';
 

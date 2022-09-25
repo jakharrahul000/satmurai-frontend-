@@ -1,5 +1,5 @@
-import { ITokenState } from '@store/states';
-import { RootState } from '@store/store';
+import { ITokenState } from 'store/states';
+import { RootState } from 'store/store';
 
 const getTokenState = (state: RootState): ITokenState => state.token;
 

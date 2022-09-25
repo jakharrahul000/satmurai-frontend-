@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { ITimeout } from '@interfaces';
+import { ITimeout } from '../interfaces';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useTimeout = (callback: (payload?: any) => void, delay: number): ITimeout => {
