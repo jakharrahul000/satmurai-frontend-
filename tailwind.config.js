@@ -81,6 +81,9 @@ module.exports = {
                     500: '#7239EA',
                     700: '#5014D0',
                 },
+                orange: {
+                    500: '#F97316',
+                },
                 alert: {
                     red: {
                         100: '#fed7e1',

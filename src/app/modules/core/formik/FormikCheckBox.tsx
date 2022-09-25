@@ -1,0 +1,64 @@
+import React from 'react';
+import { Field, ErrorMessage, FieldProps } from 'formik';
+import { FormikInputInfo, FormikError, FormikLabel } from '../formik';
+import { IFormikInput } from '../../../interfaces';
+
+export const FormikCheckBox = React.forwardRef<HTMLInputElement, IFormikInput>(
+    (
+        { showLabel, label, name, options, labelClass, className, inputNumber, info, ...rest },
+        ref,
+    ): JSX.Element => {
+        const checkBoxOptions = options ? options : [];
+
+        if (checkBoxOptions.length === 0) return <></>;
+
+        return (
+            <div>
+                <FormikLabel
+                    inputNumber={inputNumber}
+                    showLabel={showLabel}
+                    label={label}
+                    name={name}
+                    labelClass={labelClass}
+                />
+                <Field id={name} name={name}>
+                    {({ field, meta }: FieldProps) => {
+                        const { error, touched } = meta;
+
+                        return (
+                            <div className="flex flex-col">
+                                {checkBoxOptions.map((option, index) => {
+                                    return (
+                                        <div key={index} className="flex items-center">
+                                            <input
+                                                {...rest}
+                                                className={className + ' w-4 h-4 cursor-pointer'}
+                                                type="checkbox"
+                                                id={option.value}
+                                                {...field}
+                                                value={option.value}
+                                                checked={field.value.includes(option.value)}
+                                                ref={ref}
+                                            />
+                                            {option.key}
+                                        </div>
+                                    );
+                                })}
+                                {error && (
+                                    <ErrorMessage name={name}>
+                                        {(msg) => <FormikError>{msg}</FormikError>}
+                                    </ErrorMessage>
+                                )}
+                                {(!error || (error && !touched)) && info && (
+                                    <FormikInputInfo>{info}</FormikInputInfo>
+                                )}
+                            </div>
+                        );
+
+                        return;
+                    }}
+                </Field>
+            </div>
+        );
+    },
+);

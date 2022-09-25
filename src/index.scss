@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+    word-break: break-word;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    background-color: #eff2f5;
+}
+
+/* width */
+.scrollbar::-webkit-scrollbar {
+    width: 5px;
+}
+/* Track */
+.scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #b5b5c3;
+    border-radius: 6px;
+}
+/* Handle on hover */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #a1a5b7;
+}
+
+.hideScrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hideScrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+// Hnadle tables
+.tableClass {
+    border-collapse: collapse;
+    border: 1px solid #b5b5c3;
+}
+.tableClass th,
+td {
+    border: 1px solid #b5b5c3;
+}
+.tableClass th,
+tr:nth-child(even) {
+    background-color: #e4e6ef;
+}
